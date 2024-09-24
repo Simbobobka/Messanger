@@ -1,0 +1,224 @@
+*{
+    width: 100%;
+    height: 100%;  
+    background-color: #f4f3ee;  
+    font-family: cursive;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+.box{
+    width: 96%;
+    height: 96%;
+    display: flex;
+    background-color: #0D1B2A;
+    border-radius: 3rem;
+}
+
+.contacts{    
+    background-color: #1B263B;
+    height: 100%;
+    width: 30%;
+    border-radius: 3rem;
+    display: flex; 
+    flex-direction: column;     
+    align-items: center;     
+}
+
+.contacts div{    
+    background-color: #1B263B;
+    height: 30%;
+}
+
+.contacts button{
+    width: 40%;
+    height: 10%;
+    border-radius: 1rem;  
+    border-radius: 1rem;  
+    margin-left: 30%;
+}
+
+.contacts input{
+    width: 60%;
+    min-height: 40%;
+    height: 40%;
+    border-radius: 1rem;      
+}
+
+.contacts p{
+    width: 50%;
+    height: 5%;
+    font-weight: 600;
+    color: #f4f3ee;
+    background-color: #1B263B;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.contacts h2{
+    width: 50%;
+    height: 5%;
+    font-weight: 600;
+    color: #f4f3ee;
+    background-color: #1B263B;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.contacts label{
+    width: 50%;
+    height: 5%;
+    font-weight: 600;
+    color: #f4f3ee;
+    background-color: #1B263B;
+    margin-bottom: 2%;
+}
+
+.contacts form{
+    width: 90%;
+    height: 40%;
+    background-color: #1B263B;
+}
+
+.contacts a{
+    width: 90%;
+    height: 3%;    
+    padding-bottom: 2%;
+    background-color: #1B263B;
+    color: #f4f3ee;
+}
+
+.chat{
+    background-color: #1B263B;
+    border-radius: 3rem;
+    height: 100%;
+    width: 79%;
+    margin-left: 1%;
+}
+
+/* ssssssssssssssssssss */
+.sign-up{    
+    background-color: #1B263B;
+    height: 100%;
+    width: 40%;
+    border-radius: 3rem;
+    display: flex; 
+    flex-direction: column;     
+    align-items: center;     
+}
+
+.sign-up div{    
+    background-color: #1B263B;
+     
+    height: auto;
+    margin-top: 2%;
+    display: flex; 
+    flex-direction: column;     
+    align-items: center;  
+}
+
+.sign-up li{    
+    background-color: #1B263B;
+    height: 30%;
+    width: 90%;
+    margin-top: 2%;    
+    text-align: center;
+}
+
+.sign-up ul{    
+    background-color: #1B263B;
+    height: auto;
+    width: 90%;    
+}
+
+.sign-up button{
+    width: 40%;
+    height: 10%;
+    border-radius: 1rem;  
+    border-radius: 1rem;  
+    margin-left: 30%;
+    margin-top: 2%;
+}
+
+.sign-up input{
+    width: 60%;
+    min-height: 1.7rem;
+    margin-top: 1%;
+    border-radius: 1rem;     
+    text-align: center; 
+    font-weight: 700;
+}
+
+.helptext{
+    color: greenyellow;
+}
+
+.sign-up p{
+    width: 50%;
+    height: 5%;
+    font-weight: 600;
+    color: #f4f3ee;
+    background-color: #1B263B;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.sign-up h2{
+    width: 50%;
+    height: 5%;
+    font-weight: 600;
+    color: #f4f3ee;
+    background-color: #1B263B;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.sign-up label{
+    width: 50%;
+    height: 5%;
+    font-weight: 600;
+    color: #f4f3ee;
+    background-color: #1B263B;
+    text-align: center;
+}
+
+.sign-up form{
+    width: 75%;
+    height: 85%;
+    background-color: #1B263B;    
+}
+
+.sign-up a{
+    width: 90%;
+    height: 3%;    
+    padding-bottom: 2%;
+    background-color: #1B263B;
+    color: #f4f3ee;
+}
+
+.errorlist{
+    color: crimson;
+}
+
+.chat__item__container{
+  background-color: #1B263B;
+}
+
+.chat__item__container div{
+  background-color: #1B263B;
+  height: 1%;
+  margin-top: 1%;
+  color: #f4f3ee;
+}
+
+#id_message_send_input{
+  width: 25%;
+  height: 15%;
+}
+#id_message_send_button{
+  width: 20%;
+  height: 15%;
+}
