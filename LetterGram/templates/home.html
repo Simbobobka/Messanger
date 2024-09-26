@@ -13,45 +13,54 @@
             <button type="submit">Log Out</button>
             </form>
         </div>
-        <div class="chat"><div
-            class="chat__item__container"
-            id="id_chat_item_container"
-            style="font-size: 20px"
-            >                
-            <input type="text" id="id_message_send_input" />
-            <button type="submit" id="id_message_send_button">Send Message</button>
-                
-        </div></div>
-
-        
+        <div class="chat" id="id_chat_item_container">
+            <div id="id_messages_container"></div> <!-- Messages will be appended here -->
+            <div class="chat__input-container">
+                <input type="text" id="id_message_send_input" class="chat__input" placeholder="Type your message..." />
+                <button type="submit" id="id_message_send_button" class="chat__button">Send</button>
+            </div>            
+        </div>            
         
         <script>
         const chatSocket = new WebSocket("ws://" + window.location.host + "/");
+
         chatSocket.onopen = function (e) {
-            console.log("The connection was setup successfully !");
+            console.log("Connection established successfully!");
         };
+
         chatSocket.onclose = function (e) {
-            console.log("Something unexpected happened !");
+            console.log("Connection closed unexpectedly.");
         };
+
+        // Focus on the input field and handle 'Enter' key press
         document.querySelector("#id_message_send_input").focus();
         document.querySelector("#id_message_send_input").onkeyup = function (e) {
-            if (e.keyCode == 13) {
-            document.querySelector("#id_message_send_button").click();
+            if (e.keyCode === 13) {
+                document.querySelector("#id_message_send_button").click();
             }
         };
+
+        // Send message on button click
         document.querySelector("#id_message_send_button").onclick = function (e) {
-            var messageInput = document.querySelector(
-            "#id_message_send_input"
-            ).value;
-            chatSocket.send(JSON.stringify({ message: messageInput, username : "{{request.user.username}}"}));
+            const messageInput = document.querySelector("#id_message_send_input").value.trim();
+
+            if (messageInput !== "") {
+                chatSocket.send(JSON.stringify({
+                    message: messageInput,
+                    username: "{{request.user.username}}"
+                }));
+                document.querySelector("#id_message_send_input").value = ""; // Clear input field
+            }
         };
+
+        // Receive and display messages
         chatSocket.onmessage = function (e) {
             const data = JSON.parse(e.data);
-            var div = document.createElement("div");
-            div.innerHTML = data.username + " : " + data.message;
-            document.querySelector("#id_message_send_input").value = "";
-            document.querySelector("#id_chat_item_container").appendChild(div);
+            const messageDiv = document.createElement("div");
+            messageDiv.innerHTML = `<strong>${data.username}:</strong> ${data.message}`;
+            document.querySelector("#id_messages_container").appendChild(messageDiv);
         };
+
         </script>
 
         </div>

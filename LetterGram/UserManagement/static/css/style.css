@@ -39,6 +39,9 @@
     border-radius: 1rem;  
     border-radius: 1rem;  
     margin-left: 30%;
+    background-color: #007bff;
+    border: none;
+    color: white;
 }
 
 .contacts input{
@@ -46,6 +49,7 @@
     min-height: 40%;
     height: 40%;
     border-radius: 1rem;      
+    border: none;
 }
 
 .contacts p{
@@ -91,13 +95,7 @@
     color: #f4f3ee;
 }
 
-.chat{
-    background-color: #1B263B;
-    border-radius: 3rem;
-    height: 100%;
-    width: 79%;
-    margin-left: 1%;
-}
+
 
 /* ssssssssssssssssssss */
 .sign-up{    
@@ -141,16 +139,23 @@
     border-radius: 1rem;  
     margin-left: 30%;
     margin-top: 2%;
+    border: none;
+    background-color: #007bff;
+    color: white;
 }
 
 .sign-up input{
     width: 60%;
     min-height: 1.7rem;
     margin-top: 1%;
-    border-radius: 1rem;     
+    border-radius: 3rem;     
     text-align: center; 
     font-weight: 700;
+    border: none;
+    resize: none; /* Disable resizing */
+    overflow-y: auto; /* Enable scroll if content exceeds height */
 }
+
 
 .helptext{
     color: greenyellow;
@@ -203,22 +208,81 @@
     color: crimson;
 }
 
-.chat__item__container{
-  background-color: #1B263B;
+
+.chat {
+    background-color: #1B263B;
+    border-radius: 3rem;
+    height: 100%; 
+    width: 79%;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end; 
 }
 
-.chat__item__container div{
-  background-color: #1B263B;
-  height: 1%;
-  margin-top: 1%;
-  color: #f4f3ee;
+.chat__input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: #1B263B;
+    border-radius: 3rem;
 }
 
-#id_message_send_input{
-  width: 25%;
-  height: 15%;
+/* Messages container */
+#id_messages_container {
+    flex: 1; /* Takes up available space above the input field */
+    overflow-y: auto; /* Allows scrolling when there are too many messages */    
+    margin-bottom: 10px;
+    background-color: #24437b; /* Message container background */
+    border-radius: 1rem;
+    color: antiquewhite;
+    text-align: left;    
 }
-#id_message_send_button{
-  width: 20%;
-  height: 15%;
+
+/* Individual messages */
+#id_messages_container div {
+    background-color:#1B263B;
+    border-radius: 0.5rem;
+    height: auto;
+    width: 90%;
+    color: antiquewhite;
+    text-align: left;
+    margin-top: 1%;
+    margin-left: 1%;
+    word-wrap: break-word;
+    padding: 1%;
+    strong{
+        background-color: #1B263B;
+        margin-left: 1%;
+    }
 }
+
+
+.chat input {    
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 2.5rem;
+    outline: none;
+    width: 80%; 
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 40%;    
+}
+
+.chat button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    
+    border-radius: 2.5rem;
+    cursor: pointer;
+    font-size: 18px;
+    width: 15%; 
+    height: 40%;
+}
+
+.chat button:hover {
+    background-color: #0056b3;
+}
+
