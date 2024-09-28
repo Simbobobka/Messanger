@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="image-form">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+    </div>
+    {% if user.userprofile.profile_picture %}
+    <div class="image">
+        <div class="circle">
+        <img src="{{ user.userprofile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

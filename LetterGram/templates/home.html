@@ -8,10 +8,24 @@
     <container class="box">
         <div class="contacts">
             <p>{ {{ user.username }} }</p>
-            <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Log Out</button>
+            <div class="circle">
+                <img src="{{ user.userprofile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                </div>
+            <section>
+                <form action="{% url 'logout' %}" method="post" id="profile-page">
+                {% csrf_token %}
+                <button type="submit" id="btn-profile-page">Log Out</button>            
+                </form>
+                    
+            
+                <form action="{% url 'profile' %}" method="POST" id="profile-page">
+                {% csrf_token %}
+                <button type="submit" id="btn-profile-page">edit account</button>   
             </form>
+            </section>    
+
+            
+
         </div>
         <div class="chat" id="id_chat_item_container">
             <div id="id_messages_container"></div> <!-- Messages will be appended here -->

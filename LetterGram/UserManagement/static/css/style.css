@@ -1,7 +1,7 @@
 *{
     width: 100%;
     height: 100%;  
-    background-color: #f4f3ee;  
+    /* background-color: #f4f3ee;   */
     font-family: cursive;
 }
 
@@ -60,6 +60,27 @@
     background-color: #1B263B;
     margin-bottom: 2%;
     text-align: center;
+}
+
+.contacts section {
+    width: 90%;
+    height: 10%;
+    font-weight: 600;
+    color:antiquewhite;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: left; 
+    gap: 10px; 
+}
+
+#btn-profile-page {
+    min-height: 3rem;
+    width: 100%; 
+    margin-left: 0%;    
+}
+#profile-page {
+    display: inline-block; 
 }
 
 .contacts h2{
@@ -206,6 +227,8 @@
 
 .errorlist{
     color: crimson;
+    max-height: 3%;
+    background-color: none;
 }
 
 
@@ -286,3 +309,95 @@
     background-color: #0056b3;
 }
 
+.profile-container {    
+    display: flex;     
+    width: 100%;
+    height:  100%;
+}
+
+.image-form{
+    width: 30%;
+}
+
+.profile-container form{
+    height: 90%;
+    width:  95%;    
+    background-color: #0D1B2A;
+    color: antiquewhite;
+    border-radius: 3rem;
+    border: none;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+}
+
+.profile-container p{
+    height: 40%;
+    width:  90%;
+    background-color: #0D1B2A;   
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+}
+
+.profile-container a{    
+    background-color: #0D1B2A;    
+    color:antiquewhite;
+    word-wrap: break-word;
+}
+
+.profile-container label{
+    height: 40%;
+    width:  90%;
+    background-color: #0D1B2A;    
+}
+
+.image-form button{
+    height: 10%;
+    width: 40%;
+    background-color:#007bff;
+    color: antiquewhite;
+    border: none;
+    border-radius: 3rem;
+}
+
+#profile_picture-clear_id{
+    height: 30%;
+    width:  30%;
+}
+
+#id_profile_picture{
+    height: 20%;
+    background-color:#007bff;
+    color: antiquewhite;
+    border: none;
+    border-radius: 1rem;    
+}
+
+.image{
+    background-color: #1B263B;
+    height: 90%;
+    border-radius: 3rem;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+}
+
+.circle {
+    margin-top: 5%;
+    border-radius: 50%;
+    height: 200pt;
+    width: 200pt;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    object-position: center;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 2%;
+}
