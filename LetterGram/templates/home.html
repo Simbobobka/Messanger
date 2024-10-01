@@ -8,9 +8,9 @@
     <container class="box">
         <div class="contacts">
             <p>{ {{ user.username }} }</p>
-            <div class="circle">
-                <img src="{{ user.userprofile.profile_picture }}" alt="Profile Picture" class="profile-img">
-                </div>
+            <div class="circle">                                    
+                <img src="{{ picture.url }}" alt="Profile Picture" class="profile-img">
+            </div>
             <section>
                 <form action="{% url 'logout' %}" method="post" id="profile-page">
                 {% csrf_token %}

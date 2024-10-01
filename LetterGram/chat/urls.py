@@ -8,7 +8,4 @@ urlpatterns = [
     path('', views.chatPage, name="home"),       
     path('<int:chat_id>/', views.chatPage, name='chat-detail'),
     path('start-chat/<int:user_id>/', views.startChat, name='start-chat'),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
