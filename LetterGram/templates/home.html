@@ -96,13 +96,13 @@
         </script>
 
         </div>
-        {% else %}
-        <div class="contacts">
-            <p>You are not logged in
-            <a href="{% url 'login' %}">Log In</a></p>
-            <p>Don't have an account? Create new one
-            <a href="{% url 'signup' %}">Sign up</a></p>
-        </div>        
+    {% else %}
+    <div class="contacts">
+        <p>You are not logged in
+        <a href="{% url 'login' %}">Log In</a></p>
+        <p>Don't have an account? Create new one
+        <a href="{% url 'signup' %}">Sign up</a></p>
+    </div>        
         
     </container>
     

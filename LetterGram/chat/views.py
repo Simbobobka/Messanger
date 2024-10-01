@@ -14,7 +14,7 @@ def chatPage(request, chat_id=None):
     selected_chat = None
     messages = None
     other_participant = None
-    picture = UserProfile.objects.get(id = user.id)    
+    picture, created = UserProfile.objects.get_or_create(user = user)    
     if chat_id:
         selected_chat = get_object_or_404(Chat, id=chat_id)
         id_chat = chat_id
