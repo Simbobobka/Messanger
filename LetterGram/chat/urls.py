@@ -3,10 +3,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
-urlpatterns = [
-    path('healthcheck/', views.healthcheck),       
+urlpatterns = [    
     path('profile/', views.profile, name='profile'),       
     path('', views.chatPage, name="home"),       
+    path('<int:chat_id>/', views.chatPage, name='chat-detail'),
+    path('start-chat/<int:user_id>/', views.startChat, name='start-chat'),
 ]
 
 if settings.DEBUG:

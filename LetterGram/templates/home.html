@@ -9,7 +9,7 @@
         <div class="contacts">
             <p>{ {{ user.username }} }</p>
             <div class="circle">
-                <img src="{{ user.userprofile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                <img src="{{ user.userprofile.profile_picture }}" alt="Profile Picture" class="profile-img">
                 </div>
             <section>
                 <form action="{% url 'logout' %}" method="post" id="profile-page">
@@ -23,21 +23,39 @@
                 <button type="submit" id="btn-profile-page">edit account</button>   
             </form>
             </section>    
-
-            
-
+            <ul>
+                {% for contact in users %}
+                <li>
+                    <a href="{% url 'start-chat' contact.id %}">
+                        {{ contact.username }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        <div class="chat" id="id_chat_item_container">
-            <div id="id_messages_container"></div> <!-- Messages will be appended here -->
-            <div class="chat__input-container">
-                <input type="text" id="id_message_send_input" class="chat__input" placeholder="Type your message..." />
-                <button type="submit" id="id_message_send_button" class="chat__button">Send</button>
-            </div>            
-        </div>            
+
+            <div class="chat" id="id_chat_item_container">
+                <div id="id_messages_container">
+                    {% if selected_chat %}
+                        {% for message in messages %}
+                            <div><strong>{{ message.sender.username }}:</strong> {{ message.content }}</div>
+                        {% endfor %}
+                    {% else %}
+                        <p>Select a chat to start messaging</p>
+                    {% endif %}
+                </div>
+    
+                {% if selected_chat %}
+                <div class="chat__input-container">
+                    <input type="text" id="id_message_send_input" class="chat__input" placeholder="Type your message..." />
+                    <button type="submit" id="id_message_send_button" class="chat__button">Send</button>
+                </div>
+                {% endif %}
+            </div>          
         
         <script>
-        const chatSocket = new WebSocket("ws://" + window.location.host + "/");
-
+        const chatId = "{{ selected_chat }}";          
+        const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + chatId + "/");        
         chatSocket.onopen = function (e) {
             console.log("Connection established successfully!");
         };

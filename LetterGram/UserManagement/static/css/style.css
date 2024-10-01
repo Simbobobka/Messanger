@@ -33,6 +33,10 @@
     height: 30%;
 }
 
+.contacts li{     
+    height: 5%;
+}
+
 .contacts button{
     width: 40%;
     height: 10%;
